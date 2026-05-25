@@ -122,23 +122,24 @@ export default function Hero() {
               style={{
                 fontSize: "clamp(36px, 5.5vw, 64px)",
                 fontWeight: 800,
-                lineHeight: 1.15,
+                lineHeight: 1.2,
                 letterSpacing: "-0.5px",
               }}
             >
               {/* Mobile: 3 linhas | Desktop: 2 linhas */}
               <span className="block md:hidden">
-                Inspeção e <span className="text-eich-red">Análise</span>
+                Inspeção e{" "}
+                <span className="text-eich-red">Análise</span>
                 <br />
                 de Peças
                 <br />
-                <span style={{ fontSize: "1.13em" }}>Automotivas</span>
+                Automotivas
               </span>
               <span className="hidden md:block">
                 Inspeção e{" "}
-                <span className="text-eich-red">Análise</span> de
+                <span className="text-eich-red">Análise</span>
                 <br />
-                Peças Automotivas
+                de Peças Automotivas
               </span>
             </h1>
 
