@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import FeaturedClients from "./components/FeaturedClients";

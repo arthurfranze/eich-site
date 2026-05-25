@@ -120,7 +120,7 @@ export default function Hero() {
             <h1
               className="text-white font-800 mb-6 text-center md:text-left"
               style={{
-                fontSize: "clamp(36px, 5.5vw, 64px)",
+                fontSize: "clamp(34px, 4.5vw, 58px)",
                 fontWeight: 800,
                 lineHeight: 1.2,
                 letterSpacing: "-0.5px",
