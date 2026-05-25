@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Carrossel infinito */
+.carousel-track {
+  display: flex;
+  width: max-content;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #0A0A0A, transparent);
+}
+
+.carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #0A0A0A, transparent);
+}
+
+.carousel-track-left {
+  animation: scrollLeft 50s linear infinite;
+}
+
+.carousel-track-right {
+  animation: scrollRight 50s linear infinite;
+}
+
+.carousel-wrapper:hover .carousel-track-left,
+.carousel-wrapper:hover .carousel-track-right {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Animações de entrada */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Steps connector */
+.steps-connector {
+  position: relative;
+}
+
+.steps-connector::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 100%;
+  height: 2px;
+  border-top: 2px dashed #1E7FC0;
+  transform: translateY(-50%);
+  opacity: 0.4;
+}
+
+/* Featured clients — glow permanente */
+@keyframes featuredGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 12px rgba(30,127,192,0.30),
+      0 0 30px rgba(30,127,192,0.12),
+      0 4px 20px rgba(0,0,0,0.25);
+  }
+  50% {
+    box-shadow:
+      0 0 22px rgba(30,127,192,0.50),
+      0 0 55px rgba(30,127,192,0.22),
+      0 4px 20px rgba(0,0,0,0.25);
+  }
+}
+
+.featured-logo-card {
+  animation: featuredGlow 3s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.featured-logo-card:hover {
+  animation: none;
+  transform: translateY(-4px) scale(1.07);
+  box-shadow:
+    0 0 35px rgba(30,127,192,0.75),
+    0 0 80px rgba(30,127,192,0.35),
+    0 8px 30px rgba(0,0,0,0.30);
+  border-color: rgba(30,127,192,0.70) !important;
+}
+
+.featured-logo-card img {
+  transition: transform 0.3s ease;
+}
+
+.featured-logo-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Eich color bar — mobile hero badge */
+@keyframes eichColorCycle {
+  0%   { background: #1E7FC0; box-shadow: 0 0 18px rgba(30,127,192,0.7), 0 0 40px rgba(30,127,192,0.3); }
+  30%  { background: #1E7FC0; box-shadow: 0 0 18px rgba(30,127,192,0.7), 0 0 40px rgba(30,127,192,0.3); }
+  40%  { background: #FFFFFF; box-shadow: 0 0 18px rgba(255,255,255,0.6), 0 0 40px rgba(255,255,255,0.2); }
+  60%  { background: #FFFFFF; box-shadow: 0 0 18px rgba(255,255,255,0.6), 0 0 40px rgba(255,255,255,0.2); }
+  70%  { background: #E03C31; box-shadow: 0 0 18px rgba(224,60,49,0.7), 0 0 40px rgba(224,60,49,0.3); }
+  90%  { background: #E03C31; box-shadow: 0 0 18px rgba(224,60,49,0.7), 0 0 40px rgba(224,60,49,0.3); }
+  100% { background: #1E7FC0; box-shadow: 0 0 18px rgba(30,127,192,0.7), 0 0 40px rgba(30,127,192,0.3); }
+}
+
+.eich-color-bar {
+  width: 48px;
+  height: 5px;
+  border-radius: 99px;
+  animation: eichColorCycle 3s ease-in-out infinite;
+}
+
+/* Scrollbar custom */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E7FC0;
+  border-radius: 3px;
+}
