@@ -89,7 +89,7 @@ export default function WorkWithUs() {
   }, []);
 
   return (
-    <section id="trabalhe-conosco" ref={sectionRef} className="py-24 bg-eich-black">
+    <section id="trabalhe-conosco" ref={sectionRef} className="pt-16 pb-24 bg-eich-black">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-up">
           <span

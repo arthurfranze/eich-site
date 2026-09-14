@@ -6,7 +6,7 @@ export default function CTASection() {
   };
 
   return (
-    <section className="py-28 relative overflow-hidden">
+    <section className="pt-28 pb-16 relative overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-eich-blue/20 via-eich-black to-eich-black" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-eich-blue/15 rounded-full blur-[100px]" />
