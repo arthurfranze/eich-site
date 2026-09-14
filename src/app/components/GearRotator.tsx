@@ -2,14 +2,32 @@
 
 import { useEffect, useState } from "react";
 
-const ELEMENTS = [
-  { src: "/submarca.png",    alt: "Eich Serviços",  activeWidth: 280, inactiveWidth: 80 },
-  { src: "/submarca.png",    alt: "Eich Símbolo",   activeWidth: 120, inactiveWidth: 50 },
-  { src: "/iso-9001.webp",   alt: "ISO 9001:2015",  activeWidth: 160, inactiveWidth: 55 },
-  { src: "/logo-branca.png", alt: "Eich Logo",      activeWidth: 220, inactiveWidth: 70 },
+type ImageElement = {
+  kind: "image";
+  src: string;
+  alt: string;
+  activeWidth: number;
+  inactiveWidth: number;
+};
+
+type TextElement = {
+  kind: "text";
+  number: string;
+  label: string;
+  alt: string;
+  activeWidth: number;
+  inactiveWidth: number;
+};
+
+type Element = ImageElement | TextElement;
+
+const ELEMENTS: Element[] = [
+  { kind: "image", src: "/submarca.png",  alt: "Eich Serviços", activeWidth: 280, inactiveWidth: 80 },
+  { kind: "text",  number: "+10",  label: "anos de\nexperiência",       alt: "+10 anos de experiência",      activeWidth: 200, inactiveWidth: 70 },
+  { kind: "image", src: "/iso-9001.webp", alt: "ISO 9001:2015", activeWidth: 160, inactiveWidth: 55 },
+  { kind: "text",  number: "+100", label: "clientes\natendidos",         alt: "+100 clientes atendidos",      activeWidth: 200, inactiveWidth: 70 },
 ];
 
-// posIdx: 0 = top | 1 = right (active/highlighted) | 2 = bottom | 3 = left
 const POS = [
   { x: 0,    y: -160 },
   { x: 160,  y: 0    },
@@ -22,8 +40,6 @@ export default function GearRotator() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      // clockwise: top → right → bottom → left → top
-      // the element that was at top becomes the new active (right)
       setActiveIdx((prev) => (prev - 1 + 4) % 4);
     }, 5000);
     return () => clearInterval(id);
@@ -32,7 +48,6 @@ export default function GearRotator() {
   return (
     <div style={{ position: "relative", width: "400px", height: "400px" }}>
       {ELEMENTS.map((el, i) => {
-        // posIdx tells which cross-arm this element occupies right now
         const posIdx = (i - activeIdx + 1 + 4) % 4;
         const isActive = posIdx === 1;
         const { x, y } = POS[posIdx];
@@ -50,30 +65,82 @@ export default function GearRotator() {
                 "transform 0.8s ease-in-out, opacity 0.6s ease-in-out, width 0.6s ease-in-out, box-shadow 0.6s ease-in-out",
               opacity: isActive ? 1 : 0.35,
               width: `${w}px`,
-              padding: isActive ? "16px" : "0px",
+              padding: isActive ? "16px" : "8px",
               background: isActive ? "rgba(30,127,192,0.05)" : "transparent",
               borderRadius: "12px",
               boxShadow: isActive
                 ? "0 0 60px rgba(30,127,192,0.8)"
                 : "none",
               zIndex: isActive ? 10 : 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={el.src}
-              alt={el.alt}
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "contain",
-                display: "block",
-                filter: isActive
-                  ? "drop-shadow(0 0 20px rgba(30,127,192,0.7))"
-                  : "none",
-                transition: "filter 0.6s ease-in-out",
-              }}
-            />
+            {el.kind === "image" ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={el.src}
+                alt={el.alt}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                  display: "block",
+                  filter: isActive
+                    ? "drop-shadow(0 0 20px rgba(30,127,192,0.7))"
+                    : "none",
+                  transition: "filter 0.6s ease-in-out",
+                }}
+              />
+            ) : (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textAlign: "center",
+                  gap: isActive ? "4px" : "2px",
+                  transition: "gap 0.6s ease-in-out",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
+                    fontWeight: 800,
+                    fontSize: isActive ? "48px" : "18px",
+                    lineHeight: 1,
+                    color: "#1e7fc0",
+                    textShadow: isActive
+                      ? "0 0 30px rgba(30,127,192,0.6)"
+                      : "none",
+                    transition:
+                      "font-size 0.6s ease-in-out, text-shadow 0.6s ease-in-out",
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  {el.number}
+                </span>
+                <span
+                  style={{
+                    fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
+                    fontWeight: 500,
+                    fontSize: isActive ? "14px" : "0px",
+                    lineHeight: 1.3,
+                    color: "rgba(255,255,255,0.85)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    whiteSpace: "pre-line",
+                    opacity: isActive ? 1 : 0,
+                    transition:
+                      "font-size 0.6s ease-in-out, opacity 0.4s ease-in-out",
+                  }}
+                >
+                  {el.label}
+                </span>
+              </div>
+            )}
           </div>
         );
       })}
