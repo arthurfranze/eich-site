@@ -78,8 +78,11 @@ export default function Footer() {
           {/* Contact info */}
           <div className="flex flex-col gap-3">
             <h4 className="text-white font-700 text-[13px] uppercase tracking-[2px] mb-1">Contato</h4>
-            <a href="tel:+551939355565" className="text-eich-muted hover:text-white text-base transition-colors flex items-center gap-2">
-              <PhoneIcon /> (19) 3935-5565
+            <a href="tel:+5519992144687" className="text-eich-muted hover:text-white text-base transition-colors flex items-center gap-2">
+              <PhoneIcon /> (19) 99214-4687
+            </a>
+            <a href="tel:+551939355868" className="text-eich-muted hover:text-white text-base transition-colors flex items-center gap-2">
+              <PhoneIcon /> (19) 3935-5868
             </a>
             <a href="mailto:comercial@eichservicos.com.br" className="text-eich-muted hover:text-white text-base transition-colors flex items-center gap-2">
               <MailIcon /> comercial@eichservicos.com.br
@@ -88,7 +91,7 @@ export default function Footer() {
               <MapPinIcon /> Indaiatuba, SP
             </p>
             <a
-              href="https://wa.me/551939355565"
+              href="https://wa.me/5519992144687"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 text-base transition-colors mt-2"

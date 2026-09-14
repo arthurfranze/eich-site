@@ -72,7 +72,7 @@ export default function Contact() {
       label: "Endereço",
       content: (
         <p className="text-eich-muted text-sm leading-relaxed">
-          Rua Lourenço Neves, 228<br />Indaiatuba, SP — 13348-340
+          Rua Lourenço Rossi, 369<br />Indaiatuba, SP — 13348-240
         </p>
       ),
     },
@@ -80,9 +80,14 @@ export default function Contact() {
       Icon: PhoneIcon,
       label: "Telefone",
       content: (
-        <a href="tel:+551939355565" className="text-eich-muted text-sm hover:text-eich-blue transition-colors">
-          (19) 3935-5565
-        </a>
+        <div className="flex flex-col gap-1">
+          <a href="tel:+5519992144687" className="text-eich-muted text-sm hover:text-eich-blue transition-colors">
+            (19) 99214-4687
+          </a>
+          <a href="tel:+551939355868" className="text-eich-muted text-sm hover:text-eich-blue transition-colors">
+            (19) 3935-5868
+          </a>
+        </div>
       ),
     },
     {
@@ -123,7 +128,7 @@ export default function Contact() {
             </div>
 
             <a
-              href="https://wa.me/551939355565"
+              href="https://wa.me/5519992144687"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-700 px-6 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-green-500/25 hover:-translate-y-0.5 self-start"
