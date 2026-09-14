@@ -48,7 +48,7 @@ export default function Navbar() {
               alt="Eich Serviços"
               width={160}
               height={40}
-              className="h-8 md:h-9 w-auto object-contain"
+              className="h-11 md:h-12 w-auto object-contain"
               style={{ mixBlendMode: "screen" }}
               priority
             />
