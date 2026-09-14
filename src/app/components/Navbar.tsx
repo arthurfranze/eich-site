@@ -45,7 +45,7 @@ export default function Navbar() {
           >
             <Image
               src="/logo-eich-branca-certa.png"
-              alt="Eich Serviços"
+              alt="Eich Group"
               width={160}
               height={40}
               className="h-11 md:h-12 w-auto object-contain"

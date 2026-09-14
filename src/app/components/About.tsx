@@ -55,18 +55,18 @@ export default function About() {
                 Quem somos
               </span>
               <h2 className="text-4xl sm:text-5xl font-800 text-white mt-3 mb-6">
-                Sobre a Eich Serviços
+                Sobre a Eich Group
               </h2>
             </div>
 
             <div className="fade-up">
               <p className="text-eich-muted text-base leading-[1.8] mb-4">
-                A Eich Serviços é uma prestadora de serviços de inspeção e
+                A Eich Group é uma prestadora de serviços de inspeção e
                 análise técnica, realizando inspeções de peças, retrabalhos e
                 limpeza de peças representando nossos clientes.
               </p>
               <p className="text-eich-muted text-base leading-relaxed mb-10">
-                Fundada em 2015, a Eich vem crescendo gradativamente, sendo
+                Fundada em 2015, a Eich Group vem crescendo gradativamente, sendo
                 referência em nossa região. Contamos com mais de 100
                 profissionais qualificados e certificação{" "}
                 <span className="text-eich-blue font-600">ISO 9001:2015</span>.

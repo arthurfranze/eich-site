@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Eich Serviços — Inspeção e Análise de Peças Automotivas",
+  title: "Eich Group — Inspeção e Análise de Peças Automotivas",
   description:
     "Precisão técnica, confiabilidade e qualidade certificada ISO 9001:2015 para sua cadeia produtiva automotiva. Inspeção 100%, GP12, montagem e sub montagem.",
   keywords:

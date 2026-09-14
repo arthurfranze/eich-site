@@ -82,7 +82,7 @@ export default function Differentials() {
         <div className="text-center mb-16 fade-up">
           <span className="text-eich-blue font-600 uppercase" style={{ fontSize: "13px", letterSpacing: "2px" }}>Diferenciais</span>
           <h2 className="text-4xl sm:text-5xl font-800 text-white mt-3">
-            Por que escolher a Eich?
+            Por que escolher a Eich Group?
           </h2>
         </div>
 

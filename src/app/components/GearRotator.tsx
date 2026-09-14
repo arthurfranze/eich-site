@@ -22,7 +22,7 @@ type TextElement = {
 type Element = ImageElement | TextElement;
 
 const ELEMENTS: Element[] = [
-  { kind: "image", src: "/logo-branca.png", alt: "Eich Serviços", activeWidth: 260, inactiveWidth: 80 },
+  { kind: "image", src: "/logo-branca.png", alt: "Eich Group", activeWidth: 260, inactiveWidth: 80 },
   { kind: "text",  number: "+10",  label: "anos de\nexperiência",       alt: "+10 anos de experiência",      activeWidth: 200, inactiveWidth: 70 },
   { kind: "image", src: "/iso-9001.webp",   alt: "ISO 9001:2015", activeWidth: 160, inactiveWidth: 55 },
   { kind: "text",  number: "+100", label: "clientes\natendidos",         alt: "+100 clientes atendidos",      activeWidth: 200, inactiveWidth: 70 },

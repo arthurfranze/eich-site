@@ -18,7 +18,7 @@ export default function FeaturedClients() {
             className="text-white/35 uppercase text-center tracking-widest"
             style={{ fontSize: "11px", letterSpacing: "3px" }}
           >
-            Empresas líderes que confiam na Eich
+            Empresas líderes que confiam na Eich Group
           </p>
 
           {/* Logo cards — 2×2 mobile, 4 em linha desktop */}

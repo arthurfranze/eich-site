@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <Image
               src="/logo-branca.png"
-              alt="Eich Serviços"
+              alt="Eich Group"
               width={130}
               height={52}
               className="h-12 w-auto object-contain"
@@ -101,7 +101,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-eich-muted text-xs text-center sm:text-left">
-            © 2025 Eich Serviços · Todos os direitos reservados
+            © 2025 Eich Group · Todos os direitos reservados
           </p>
           <div className="flex items-center gap-2">
             <Image src="/iso-9001.webp" alt="ISO 9001:2015" width={24} height={24} className="w-6 h-6 object-contain opacity-60" />

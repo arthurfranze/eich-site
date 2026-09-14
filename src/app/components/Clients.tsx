@@ -69,7 +69,7 @@ export default function Clients() {
             Nossos Clientes
           </h2>
           <p className="text-eich-muted text-lg">
-            Empresas líderes que confiam na Eich
+            Empresas líderes que confiam na Eich Group
           </p>
         </div>
       </div>

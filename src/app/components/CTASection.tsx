@@ -17,7 +17,7 @@ export default function CTASection() {
           <span className="text-eich-blue">qualidade</span> das suas peças?
         </h2>
         <p className="text-eich-muted text-lg mb-10 max-w-xl mx-auto leading-[1.8]">
-          Entre em contato e descubra como a Eich pode ser a solução que você
+          Entre em contato e descubra como a Eich Group pode ser a solução que você
           precisa.
         </p>
         <button
