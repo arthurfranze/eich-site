@@ -10,6 +10,7 @@ import About from "./components/About";
 import QualityPolicy from "./components/QualityPolicy";
 import Clients from "./components/Clients";
 import CTASection from "./components/CTASection";
+import WorkWithUs from "./components/WorkWithUs";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -26,6 +27,7 @@ export default function Home() {
       <QualityPolicy />
       <Clients />
       <CTASection />
+      <WorkWithUs />
       <Contact />
       <Footer />
     </main>
