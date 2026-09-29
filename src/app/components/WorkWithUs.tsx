@@ -137,7 +137,7 @@ export default function WorkWithUs() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
               <a
-                href="https://wa.me/5519992144687?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20meu%20curr%C3%ADculo%20para%20trabalhar%20na%20Eich%20Group."
+                href="https://wa.me/5519991467504?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20meu%20curr%C3%ADculo%20para%20trabalhar%20na%20Eich%20Group."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-700 px-6 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-green-500/25 hover:-translate-y-0.5"
@@ -146,7 +146,7 @@ export default function WorkWithUs() {
                 Enviar currículo
               </a>
               <a
-                href="mailto:comercial@eichservicos.com.br?subject=Curr%C3%ADculo%20-%20Trabalhe%20Conosco"
+                href="mailto:Rh2@eichservicos.com.br?subject=Curr%C3%ADculo%20-%20Trabalhe%20Conosco"
                 className="inline-flex items-center justify-center gap-3 bg-white/5 border border-white/10 hover:border-eich-blue/40 text-white font-700 px-6 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
               >
                 <MailIcon />
