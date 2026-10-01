@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const LOGO_FILES: string[] = [
   "1.png","2.png","3.svg","4.png","5.png","6.svg","7.jpg","8.png","9.png",
@@ -16,74 +16,40 @@ const LOGO_FILES: string[] = [
   "81.png",
 ];
 
-const ALL_LOGOS = LOGO_FILES.map((f) => `/logos/${f}`);
+const DARK_BG_LOGOS = new Set([8, 9, 78]);
+
+const ALL_LOGOS = LOGO_FILES.map((f, i) => ({
+  src: `/logos/${f}`,
+  num: i + 1,
+}));
+
 const half = Math.ceil(ALL_LOGOS.length / 2);
 const row1 = ALL_LOGOS.slice(0, half);
 const row2 = ALL_LOGOS.slice(half);
 
-function LogoCard({ src }: { src: string }) {
+function LogoCard({ src, num }: { src: string; num: number }) {
   const [hidden, setHidden] = useState(false);
-  const [isDark, setIsDark] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
-
-  const detectBrightness = useCallback(() => {
-    const img = imgRef.current;
-    if (!img || img.naturalWidth === 0) return;
-
-    try {
-      const canvas = document.createElement("canvas");
-      const size = 64;
-      canvas.width = size;
-      canvas.height = size;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
-
-      ctx.drawImage(img, 0, 0, size, size);
-      const data = ctx.getImageData(0, 0, size, size).data;
-
-      let totalBrightness = 0;
-      let opaquePixels = 0;
-
-      for (let i = 0; i < data.length; i += 4) {
-        const a = data[i + 3];
-        if (a < 30) continue;
-        const r = data[i], g = data[i + 1], b = data[i + 2];
-        totalBrightness += (r * 0.299 + g * 0.587 + b * 0.114);
-        opaquePixels++;
-      }
-
-      if (opaquePixels < 50) {
-        setIsDark(false);
-        return;
-      }
-
-      const avgBrightness = totalBrightness / opaquePixels;
-      setIsDark(avgBrightness < 80);
-    } catch {
-      setIsDark(false);
-    }
-  }, []);
+  const needsDark = DARK_BG_LOGOS.has(num);
 
   if (hidden) return null;
 
   return (
     <div
-      className="flex-shrink-0 mx-2 flex items-center justify-center rounded-xl border transition-colors duration-300"
+      className="flex-shrink-0 mx-2 flex items-center justify-center rounded-xl border"
       style={{
-        width: "140px",
-        height: "80px",
-        padding: "12px 16px",
-        background: isDark ? "#F0F2F5" : "#FFFFFF",
-        borderColor: "rgba(30,127,192,0.15)",
+        width: "170px",
+        height: "95px",
+        padding: "10px 14px",
+        background: needsDark ? "#1A1A2E" : "#FFFFFF",
+        borderColor: needsDark
+          ? "rgba(30,127,192,0.3)"
+          : "rgba(30,127,192,0.15)",
       }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        ref={imgRef}
         src={src}
         alt=""
-        crossOrigin="anonymous"
-        onLoad={detectBrightness}
         onError={() => setHidden(true)}
         style={{
           maxHeight: "100%",
@@ -144,8 +110,8 @@ export default function Clients() {
       {/* Row 1 — left to right */}
       <div className="carousel-wrapper mb-5 fade-up">
         <div className="carousel-track carousel-track-left flex py-3 items-center">
-          {[...row1, ...row1].map((src, i) => (
-            <LogoCard key={`r1-${i}`} src={src} />
+          {[...row1, ...row1].map((logo, i) => (
+            <LogoCard key={`r1-${i}`} src={logo.src} num={logo.num} />
           ))}
         </div>
       </div>
@@ -153,8 +119,8 @@ export default function Clients() {
       {/* Row 2 — right to left */}
       <div className="carousel-wrapper fade-up">
         <div className="carousel-track carousel-track-right flex py-3 items-center">
-          {[...row2, ...row2].map((src, i) => (
-            <LogoCard key={`r2-${i}`} src={src} />
+          {[...row2, ...row2].map((logo, i) => (
+            <LogoCard key={`r2-${i}`} src={logo.src} num={logo.num} />
           ))}
         </div>
       </div>
