@@ -128,9 +128,9 @@ export default function Clients() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 mt-14">
         <div className="fade-up text-center">
           <p className="text-eich-muted text-sm">
-            Mais de{" "}
-            <span className="text-white font-700">80 empresas</span> confiam
-            na qualidade dos nossos serviços
+            Dezenas de{" "}
+            <span className="text-white font-700">empresas de referência</span>{" "}
+            no mercado confiam na qualidade dos nossos serviços
           </p>
         </div>
       </div>
