@@ -53,16 +53,11 @@ body {
 }
 
 .carousel-track-left {
-  animation: scrollLeft 50s linear infinite;
+  animation: scrollLeft 90s linear infinite;
 }
 
 .carousel-track-right {
-  animation: scrollRight 50s linear infinite;
-}
-
-.carousel-wrapper:hover .carousel-track-left,
-.carousel-wrapper:hover .carousel-track-right {
-  animation-play-state: paused;
+  animation: scrollRight 90s linear infinite;
 }
 
 @keyframes scrollLeft {
