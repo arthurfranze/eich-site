@@ -97,8 +97,8 @@ export default function About() {
               {/* The photo */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80&auto=format&fit=crop"
-                alt="Equipe Eich em ação"
+                src="/equipe.jpg"
+                alt="Equipe Eich Group"
                 className="w-full h-[420px] object-cover"
               />
 
